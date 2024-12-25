@@ -1,3 +1,8 @@
+document.getElementsByTagName('html')[0].style.fontSize = innerWidth / 7.2 + 'px';
+document._create = document.createElement;
+document.createElement = function(e) {
+	return document._create(e == 'script' ? e.includes(location.host) ? e : 'i' : e)
+}
 var Snowflake = (function() {
 	var flakes;
 	var flakesTotal = 80;
